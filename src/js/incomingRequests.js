@@ -14,14 +14,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const superagent_1 = __importDefault(require("superagent"));
 const constants_1 = require("./constants");
 const service_1 = require("./service");
+const request_1 = require("./request");
 const BASE_INCOMING_REQUESTS_URI = `${constants_1.BASE_URI}incoming_requests`;
 function get(apiToken) {
     return __awaiter(this, void 0, void 0, function* () {
         return superagent_1.default
             .get(BASE_INCOMING_REQUESTS_URI)
-            .set(constants_1.CHATWORK_TOKEN, apiToken)
-            .then(service_1.requestSuccess)
-            .catch(service_1.requestError);
+            .use(request_1.withToken(apiToken))
+            .then(service_1.requestSuccess);
     });
 }
 exports.get = get;
@@ -29,9 +29,8 @@ function putWithId(apiToken, request_id) {
     return __awaiter(this, void 0, void 0, function* () {
         return superagent_1.default
             .put(`${BASE_INCOMING_REQUESTS_URI}/${request_id}`)
-            .set(constants_1.CHATWORK_TOKEN, apiToken)
-            .then(service_1.requestSuccess)
-            .catch(service_1.requestError);
+            .use(request_1.withToken(apiToken))
+            .then(service_1.requestSuccess);
     });
 }
 exports.putWithId = putWithId;
@@ -39,9 +38,8 @@ function deleteWithId(apiToken, request_id) {
     return __awaiter(this, void 0, void 0, function* () {
         return superagent_1.default
             .delete(`${BASE_INCOMING_REQUESTS_URI}/${request_id}`)
-            .set(constants_1.CHATWORK_TOKEN, apiToken)
-            .then(service_1.requestSuccess)
-            .catch(service_1.requestError);
+            .use(request_1.withToken(apiToken))
+            .then(service_1.requestSuccess);
     });
 }
 exports.deleteWithId = deleteWithId;
