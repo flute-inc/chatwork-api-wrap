@@ -1,4 +1,8 @@
 const chatwork = require("./../src/js/index");
 
-chatwork.me.get("0c1f544299f8f0fea7ad165279cdb9fe")
-    .then((body) => console.log(body));
+chatwork.me.get("eyJjdHkiOiJKV1QiLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6ImE5M2Q0NmZjLTE5NmMtNGRjMi05YWQ0LWM4MmY5YmY4YzllMyJ9.eyJhdWQiOiJodHRwczovL2FwaS5jaGF0d29yay5jb20iLCJzdWIiOiIzNjU4MDA4IiwiYWNjb3VudF9pZCI6IjM2NTgwMDgiLCJzY29wZSI6WyJyb29tcy5hbGw6cmVhZF93cml0ZSIsInVzZXJzLnByb2ZpbGUubWU6cmVhZCIsIm9mZmxpbmVfYWNjZXNzIiwiY29udGFjdHMuYWxsOnJlYWRfd3JpdGUiXSwiaXNzIjoiaHR0cHM6Ly9vYXV0aC5jaGF0d29yay5jb20iLCJleHAiOjE1NDkzNDQ2MTEsImlhdCI6MTU0OTM0MjgxMSwianRpIjoiM2M1NDcwYzQtNGNlMS00ZjlkLWE4MzItYWJhNTZlYWI1YzIyIiwiY2xpZW50X2lkIjoiR2ptT01tWXJRTVZwMyJ9.J0HwJ-FttBKSyILspmn170MDOhzphZ76-yfXjDh9eAoFvTp2X4-SfWC-AxNe3YKRkIvpbfWjyeRkcTjsjs3xtICW2QpIY0zdrKfCAOwmvRE5VRLg325ABkIciWNAdlp59t1L5MXF_k_Dokl1Muoi7MLyJd7flHkL6Baz1iF_hZBDepJI-inhBttCA0KHcJl_HF7zs67bFOywkPH2yR6byl_JSCTIVLH60j3-pq0ZWEUUDzslHh-ekisZq9Nd3XVxR8j1YMaNxsRMfZNK7ETcpufXE3rrmISmH2wkqvVZli3zWaDBoQorTmYcMMLVCtGqbkDLaYaoSSYYuImF1rQuww")
+    .then((body) => console.log(body))
+    .catch((err) => {
+        console.log(err);
+
+    });
