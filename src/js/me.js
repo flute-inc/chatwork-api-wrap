@@ -21,7 +21,8 @@ function get(apiToken) {
         return superagent_1.default
             .get(`${BASE_ME_URI}`)
             .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
+            .then(service_1.requestSuccess)
+            .catch(service_1.requestError);
     });
 }
 exports.get = get;

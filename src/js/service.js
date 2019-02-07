@@ -7,6 +7,7 @@ exports.requestSuccess = (res) => {
     }
     return null;
 };
+exports.requestError = ({ response }) => Promise.reject(response.error);
 exports.objectToQuery = (obj) => {
     const keys = Object.keys(obj);
     const query = keys

@@ -21,7 +21,8 @@ exports.status = {
         return superagent_1.default
             .get(`${BASE_MY_URI}/status`)
             .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
+            .then(service_1.requestSuccess)
+            .catch(service_1.requestError);
     }),
 };
 exports.tasks = {
@@ -29,6 +30,7 @@ exports.tasks = {
         return superagent_1.default
             .get(`${BASE_MY_URI}/tasks?${service_1.objectToQuery(options)}`)
             .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
+            .then(service_1.requestSuccess)
+            .catch(service_1.requestError);
     }),
 };
