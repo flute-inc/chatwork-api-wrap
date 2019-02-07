@@ -1,4 +1,4 @@
-import { Response } from "superagent";
+import { Response, ResponseError } from "superagent";
 import { STATUS_CODE_200 } from "./constants";
 
 export const requestSuccess = <T>(res: Response) => {
@@ -7,6 +7,12 @@ export const requestSuccess = <T>(res: Response) => {
     }
     return null;
 };
+
+interface ErrorResponseCallback {
+    response: Response
+}
+
+export const requestError = ({ response }: ErrorResponseCallback): Promise<ResponseError> => Promise.reject(response.error);
 
 export const objectToQuery = (obj: object & { [key: string]: any }) => {
     const keys = Object.keys(obj);

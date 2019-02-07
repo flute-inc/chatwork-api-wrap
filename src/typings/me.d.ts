@@ -1,1 +1,2 @@
-export declare function get(apiToken: string): Promise<{} | null>;
+import request from "superagent";
+export declare function get(apiToken: string): Promise<{} | request.ResponseError | null>;

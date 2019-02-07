@@ -21,7 +21,8 @@ function get(apiToken) {
         return superagent_1.default
             .get(BASE_INCOMING_REQUESTS_URI)
             .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
+            .then(service_1.requestSuccess)
+            .catch(service_1.requestError);
     });
 }
 exports.get = get;
@@ -30,7 +31,8 @@ function putWithId(apiToken, request_id) {
         return superagent_1.default
             .put(`${BASE_INCOMING_REQUESTS_URI}/${request_id}`)
             .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
+            .then(service_1.requestSuccess)
+            .catch(service_1.requestError);
     });
 }
 exports.putWithId = putWithId;
@@ -39,7 +41,8 @@ function deleteWithId(apiToken, request_id) {
         return superagent_1.default
             .delete(`${BASE_INCOMING_REQUESTS_URI}/${request_id}`)
             .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
+            .then(service_1.requestSuccess)
+            .catch(service_1.requestError);
     });
 }
 exports.deleteWithId = deleteWithId;
