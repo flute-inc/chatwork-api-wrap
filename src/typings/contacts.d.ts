@@ -1,1 +1,1 @@
-export declare function get(apiToken: string): Promise<{} | null>;
+export declare function get(apiToken: string): Promise<unknown>;

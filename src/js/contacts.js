@@ -1,27 +1,17 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.get = get;
 const superagent_1 = __importDefault(require("superagent"));
 const constants_1 = require("./constants");
 const service_1 = require("./service");
 const request_1 = require("./request");
 const BASE_CONTACTS_URI = `${constants_1.BASE_URI}contacts`;
-function get(apiToken) {
-    return __awaiter(this, void 0, void 0, function* () {
-        return superagent_1.default
-            .get(`${BASE_CONTACTS_URI}`)
-            .use(request_1.withToken(apiToken))
-            .then(service_1.requestSuccess);
-    });
+async function get(apiToken) {
+    return superagent_1.default
+        .get(`${BASE_CONTACTS_URI}`)
+        .use((0, request_1.withToken)(apiToken))
+        .then(service_1.requestSuccess);
 }
-exports.get = get;
